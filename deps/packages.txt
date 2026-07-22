@@ -1,0 +1,16 @@
+# Packages for the editor domain.
+# Consume with: pacman -S --needed - < deps/packages.txt
+
+neovim
+git
+curl
+ripgrep
+fd
+lazygit
+nodejs
+npm
+
+# LazyVim prerequisites
+gcc
+make
+unzip
