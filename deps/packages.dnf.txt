@@ -1,0 +1,18 @@
+# Packages for the editor domain on Fedora.
+# Consume with: xargs -a deps/packages.dnf.txt sudo dnf install -y
+
+neovim
+lazygit
+nodejs
+npm
+git
+curl
+ripgrep
+fd-find
+gcc
+make
+unzip
+
+# Notes:
+# - fd-find: the package name is 'fd-find' but the binary may be 'fdfind'.
+#   LazyVim handles both names.

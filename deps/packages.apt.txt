@@ -1,0 +1,19 @@
+# Packages for the editor domain on Debian/Ubuntu.
+# Consume with: xargs -a deps/packages.apt.txt sudo apt install -y
+
+neovim
+lazygit
+nodejs
+npm
+git
+curl
+ripgrep
+fd-find
+gcc
+make
+unzip
+
+# Notes:
+# - On Debian 13+, neovim is in the official repos.
+# - On Ubuntu, neovim may need a PPA for newer versions.
+# - fd-find on Debian installs binary as 'fdfind'; LazyVim handles it.
