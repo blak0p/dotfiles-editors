@@ -246,10 +246,11 @@ return {
           { section = "startup" },
         },
         preset = {
-          -- Header: ASCII-art cat from LazyVim's snacks dashboard preset.
-          -- Kept as-is from upstream; this repo just hosts the file in
-          -- dotfiles-editors. To replace with custom ASCII art, edit
-          -- the header below.
+          -- Header: ASCII-art cat from Gentleman-Programming/Gentleman.Dots
+          -- (https://github.com/Gentleman-Programming/Gentleman.Dots).
+          -- Kept as-is from that upstream preset; this repo just hosts
+          -- the file in dotfiles-editors. To replace with custom ASCII
+          -- art, edit the header below.
           header = [[
                     ░░░░░░      ░░░░░░                        
                   ░░░░░░░░░░  ░░░░░░░░░░                      
