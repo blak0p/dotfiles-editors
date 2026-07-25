@@ -1,10 +1,21 @@
 return {
   "saghen/blink.cmp",
   lazy = true,
-  dependencies = { "saghen/blink.compat" },
+  dependencies = {
+    "saghen/blink.compat",
+    "L3MON4D3/LuaSnip",
+  },
   opts = {
+    keymap = {
+      preset = "default",
+      ["<C-j>"] = { "select_next", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
+      ["<CR>"] = { "accept", "fallback" },
+      ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
+      ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+    },
     sources = {
-      default = { "avante_commands", "avante_mentions", "avante_files" },
+      default = { "lsp", "snippets", "avante_commands", "avante_mentions", "avante_files" },
       compat = {
         "avante_commands",
         "avante_mentions",

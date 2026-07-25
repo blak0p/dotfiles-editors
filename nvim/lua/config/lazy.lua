@@ -61,6 +61,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" },
 
     -- Language support plugins
+    { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
 

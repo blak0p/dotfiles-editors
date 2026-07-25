@@ -20,11 +20,15 @@ vim.keymap.set({ "n" }, "<leader>uk", "<cmd>Screenkey<CR>")
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
 vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft) -- Navigate to the left pane
-vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown) -- Navigate to the bottom pane
-vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp) -- Navigate to the top pane
+vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown) -- Navigate to the down pane
+vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)   -- Navigate to the up pane
 vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight) -- Navigate to the right pane
 vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive) -- Navigate to the last active pane
 vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext) -- Navigate to the next pane
+
+----- SPLITS -----
+vim.keymap.set("n", "<leader>\\", "<cmd>vs<CR>", { desc = "Split vertical" })
+vim.keymap.set("n", "<leader>-", "<cmd>sp<CR>", { desc = "Split horizontal" })
 
 ----- OBSIDIAN -----
 vim.keymap.set("n", "<leader>oc", "<cmd>Obsidian check<CR>", { desc = "Obsidian Check Checkbox" })
