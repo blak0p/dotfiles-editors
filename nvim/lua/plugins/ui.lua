@@ -210,10 +210,24 @@ return {
         end,
         desc = "Find Buffers",
       },
+      {
+        "<leader>ft",
+        function()
+          Snacks.terminal(vim.o.shell, {
+            win = {
+              height = 0.65,
+              width = 0.85,
+              border = "rounded",
+            },
+          })
+        end,
+        desc = "Floating Terminal",
+      },
     },
     opts = {
       notifier = {},
       image = {},
+      terminal = {},
       picker = {
         exclude = {
           ".git",

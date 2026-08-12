@@ -36,6 +36,19 @@ if vim.fn.has("wsl") == 1 then
     },
     cache_enabled = false, -- Disable clipboard caching
   }
+elseif vim.fn.has("clipboard") == 0 then
+  local ok, osc52 = pcall(require, "vim.ui.clipboard.osc52")
+  if ok then
+    local copy = osc52.copy("+")
+    vim.api.nvim_create_autocmd("TextYankPost", {
+      callback = function()
+        local reg = vim.v.event.regname
+        if reg == "+" or reg == "*" or reg == "" then
+          copy({ vim.fn.getreg(reg == "" and '"' or reg) })
+        end
+      end,
+    })
+  end
 end
 
 -- Setup lazy.nvim with the specified configuration

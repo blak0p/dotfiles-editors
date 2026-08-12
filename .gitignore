@@ -1,3 +1,4 @@
 # Neovim spell files (regenerated)
 nvim/spell/*.spl
 nvim/spell/*_words.txt
+.atl/
