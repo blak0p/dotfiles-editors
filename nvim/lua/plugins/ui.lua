@@ -91,7 +91,7 @@ return {
         lualine_a = {
           {
             "mode", -- Display the current mode
-            icon = "󱗞", -- Set the icon for the mode
+            icon = "", -- Set the icon for the mode
           },
         },
       },
@@ -226,7 +226,16 @@ return {
     },
     opts = {
       notifier = {},
-      image = {},
+      image = {
+        enabled = true,
+        doc = {
+          enabled = true,
+          inline = true,
+          float = true,
+          max_width = 80,
+          max_height = 40,
+        },
+      },
       terminal = {},
       picker = {
         exclude = {
@@ -260,25 +269,15 @@ return {
           { section = "startup" },
         },
         preset = {
-          -- Header: ASCII-art cat from Gentleman-Programming/Gentleman.Dots
-          -- (https://github.com/Gentleman-Programming/Gentleman.Dots).
-          -- Kept as-is from that upstream preset; this repo just hosts
-          -- the file in dotfiles-editors. To replace with custom ASCII
-          -- art, edit the header below.
           header = [[
-                    ░░░░░░      ░░░░░░                        
-                  ░░░░░░░░░░  ░░░░░░░░░░                      
-                ░░░░░░░░░░░░░░░░░░░░░░░░░░                    
-              ░░░░░░░░░░▒▒▒▒░░▒▒▒▒░░░░░░░░░░                  
-  ░░░░      ░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░        ░░░░    
-▒▒░░      ░░░░░░▒▒▒▒▒▒▒▒▒▒██▒▒██▒▒▒▒▒▒▒▒▒▒░░░░░░        ▒▒░░  
-▒▒░░    ░░░░░░░░▒▒▒▒▒▒▒▒▒▒████▒▒████▒▒▒▒▒▒▒▒▒▒░░░░░░░░  ▒▒░░▒ 
-▒▒▒▒░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████▒▒██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒ 
-██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██████▓▓██▒▒██████▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒█ 
-████▒▒▒▒▒▒████▒▒▒▒██████████  ██████████▒▒▒▒████▒▒▒▒▒▒▒▒██    
-  ████████████████████████      ████████████████████████      
-    ██████████████████              ██████████████████        
-        ██████████                      ██████████            
+                                                                   
+      ████ ██████           █████      ██                 btw
+     ███████████             █████                            
+     █████████ ███████████████████ ███   ███████████  
+    █████████  ███    █████████████ █████ ██████████████  
+   █████████ ██████████ █████████ █████ █████ ████ █████  
+ ███████████ ███    ███ █████████ █████ █████ ████ █████ 
+██████  █████████████████████ ████ █████ █████ ████ ██████
 ]],
           -- stylua: ignore
           ---@type snacks.dashboard.Item[]
