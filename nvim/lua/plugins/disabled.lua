@@ -24,10 +24,6 @@ return {
     enabled = false,
   },
   {
-    "olimorris/codecompanion.nvim",
-    enabled = false,
-  },
-  {
     "tris203/precognition.nvim",
     enabled = false,
   },
@@ -41,6 +37,6 @@ return {
     -- URL: https://github.com/greggh/claude-code.nvim
     -- Description: Neovim integration for Claude Code AI assistant
     "coder/claudecode.nvim",
-    enabled = true,
+    enabled = false,
   },
 }

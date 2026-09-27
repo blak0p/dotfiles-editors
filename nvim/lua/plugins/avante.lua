@@ -172,16 +172,26 @@ return {
       return {
         -- add any opts here
         -- for example
-        provider = "copilot",
+        mode = "legacy",
+        provider = "openai",
         providers = {
-          copilot = {
-            model = "claude-sonnet-4",
+          openai = {
+            endpoint = "http://127.0.0.1:8090/v1",
+            model = "ornith",
+            api_key_name = "",
+            is_env_set = function() return true end,
+            timeout = 60000,
+            extra_request_body = {
+              max_tokens = 8192,
+            },
           },
         },
-        cursor_applying_provider = "copilot",
-        auto_suggestions_provider = "copilot",
         behaviour = {
           enable_cursor_planning_mode = true,
+          auto_apply_diff_after_generation = false,
+          auto_approve_tool_permissions = false,
+          auto_focus_on_diff_view = true,
+          confirmation_ui_style = "inline_buttons",
         },
         -- File selector configuration
         --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string

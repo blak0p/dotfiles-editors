@@ -43,6 +43,9 @@ return {
     opts = {
       inlay_hints = { enabled = false }, -- Disable inlay hints
       servers = {
+        lemminx = { mason = false },
+        html = {},
+        cssls = {},
         angularls = {
           -- Configuration for Angular Language Server
           root_dir = function(fname)

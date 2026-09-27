@@ -30,16 +30,6 @@ vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext) -- Navigate
 vim.keymap.set("n", "<leader>\\", "<cmd>vs<CR>", { desc = "Split vertical" })
 vim.keymap.set("n", "<leader>-", "<cmd>sp<CR>", { desc = "Split horizontal" })
 
------ OBSIDIAN -----
-vim.keymap.set("n", "<leader>oc", "<cmd>Obsidian check<CR>", { desc = "Obsidian Check Checkbox" })
-vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian template<CR>", { desc = "Insert Obsidian Template" })
-vim.keymap.set("n", "<leader>oo", "<cmd>Obsidian open<CR>", { desc = "Open in Obsidian App" })
-vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<CR>", { desc = "Show Obsidian Backlinks" })
-vim.keymap.set("n", "<leader>ol", "<cmd>Obsidian links<CR>", { desc = "Show Obsidian Links" })
-vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<CR>", { desc = "Create New Note" })
-vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<CR>", { desc = "Search Obsidian" })
-vim.keymap.set("n", "<leader>oq", "<cmd>Obsidian quick_switch<CR>", { desc = "Quick Switch" })
-
 ----- OIL -----
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
@@ -148,6 +138,9 @@ vim.keymap.set("n", "<leader>md", function()
   vim.cmd("delmarks A-Z0-9")
   vim.notify("All marks deleted")
 end, { desc = "Delete all marks" })
+
+-- AI Inline Edit
+vim.keymap.set({ "n", "v" }, "<leader>ai", "<cmd>CodeCompanion<CR>", { desc = "AI [I]nline Edit" })
 
 -- Custom save function
 function SaveFile()

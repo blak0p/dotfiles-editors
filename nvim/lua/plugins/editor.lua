@@ -73,12 +73,23 @@ return {
     -- URL: https://github.com/dinhhuy258/git.nvim
     -- Description: Provides Git integration for Neovim.
     "dinhhuy258/git.nvim",
-    event = "BufReadPre", -- Load the plugin before reading a buffer
+    event = "BufReadPre",
     opts = {
+      default_mappings = false,
       keymaps = {
-        blame = "<Leader>gb", -- Keybinding to open blame window
-        browse = "<Leader>go", -- Keybinding to open file/folder in git repository
+        diff = "",
       },
     },
+    config = function()
+      local git = require("git.utils.git")
+      local orig_get_git_repo = git.get_git_repo
+      git.get_git_repo = function()
+        local root = orig_get_git_repo()
+        if root and root:match("^oil://") then
+          return root:match("^oil://(.*)")
+        end
+        return root
+      end
+    end,
   },
 }
